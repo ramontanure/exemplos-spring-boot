@@ -26,4 +26,9 @@ public class ProdutoService {
 		obj.setId(null);
 		return produtoRepository.save(obj);
 	}
+	
+	public Produto atualizarProduto(Produto obj) {
+		buscarProduto(obj.getId());
+		return produtoRepository.save(obj);
+	}	
 }

@@ -33,6 +33,12 @@ public class ProdutoResource {
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
 		return ResponseEntity.created(uri).build();
 	}
-
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+	public ResponseEntity<Void> update(@RequestBody Produto obj, @PathVariable Integer id) {
+		obj.setId(id);
+		obj = produtoService.atualizarProduto(obj);		
+		return ResponseEntity.noContent().build();
+	}
 	
 }
