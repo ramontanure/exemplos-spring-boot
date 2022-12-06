@@ -27,4 +27,12 @@ public class ProdutoResource {
 		return ResponseEntity.ok().body(obj);
 	}
 	
+	@RequestMapping(method = RequestMethod.POST)
+	public ResponseEntity<?> insert(@RequestBody Produto obj) {			
+		obj = produtoService.inserirProduto(obj);		
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
+		return ResponseEntity.created(uri).build();
+	}
+
+	
 }

@@ -21,4 +21,9 @@ public class ProdutoService {
 		Optional<Produto> obj = produtoRepository.findById(id);
 		return obj.orElseThrow( () -> new ObjetoNaoEncontradoException( "Objeto não encontrado. ID: " + id + ", Tipo: " + Produto.class.getName()));
 	}
+	
+	public Produto inserirProduto(Produto obj) {
+		obj.setId(null);
+		return produtoRepository.save(obj);
+	}
 }
