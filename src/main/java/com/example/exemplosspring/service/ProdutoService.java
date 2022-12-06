@@ -31,4 +31,13 @@ public class ProdutoService {
 		buscarProduto(obj.getId());
 		return produtoRepository.save(obj);
 	}	
+	
+	public void deletarProduto(Integer id) {
+		buscarProduto(id);		
+		try {
+			produtoRepository.deleteById(id);
+		} catch (DataIntegrityViolationException e) {
+			throw new DataIntegrityException("Pessoa não pode ser deletada!");
+		}		
+	}
 }

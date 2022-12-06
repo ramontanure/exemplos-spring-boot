@@ -41,4 +41,10 @@ public class ProdutoResource {
 		return ResponseEntity.noContent().build();
 	}
 	
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Void> delete(@PathVariable Integer id) {				
+		produtoService.deletarProduto(id);		
+		return ResponseEntity.noContent().build();
+	}
+	
 }
