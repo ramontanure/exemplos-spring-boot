@@ -1,0 +1,16 @@
+package com.example.exemplosspring.resources;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping(value = "/hello-world")
+public class HelloWorld {
+	
+	@RequestMapping(method = RequestMethod.GET)
+	public String mostrar() {
+		return "Hello World";
+	}
+
+}
