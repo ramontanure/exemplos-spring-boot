@@ -20,19 +20,19 @@ public class Produto implements Serializable{
 	private String nomeProduto;
 	private Double preco;
 	private String descricao;
-	private Date dataValidade;
+	private Date dataValdade;
 	
 	public Produto() {
 		
 	}
 
-	public Produto(Integer id, String nomeProduto, Double preco, String descricao, Date dataValidade) {
+	public Produto(Integer id, String nomeProduto, Double preco, String descricao, Date dataValdade) {
 		super();
 		this.id = id;
 		this.nomeProduto = nomeProduto;
 		this.preco = preco;
 		this.descricao = descricao;
-		this.dataValidade = dataValidade;
+		this.dataValdade = dataValdade;
 	}
 
 	@Override
@@ -84,12 +84,12 @@ public class Produto implements Serializable{
 		this.descricao = descricao;
 	}
 
-	public Date getDataValidade() {
-		return dataValidade;
+	public Date getDataValdade() {
+		return dataValdade;
 	}
 
-	public void setDataValidade(Date dataValidade) {
-		this.dataValidade = dataValidade;
+	public void setDataValdade(Date dataValdade) {
+		this.dataValdade = dataValdade;
 	}
 
 }
